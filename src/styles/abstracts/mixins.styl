@@ -1,0 +1,164 @@
+// Rem output with px fallback
+font-size($sizeValue = 16)
+  font-size $sizeValue * 1px
+  font-size (($sizeValue / 16) * 1)rem
+
+// Center block
+center-block()
+  display block
+  margin-left auto
+  margin-right auto
+
+// Clearfix
+clearfix()
+  content ""
+  display table
+  table-layout fixed
+
+// Clear after (not all clearfix need this also)
+clearfix-after()
+  clear both
+
+text-truncate()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+hover()
+  &:hover
+    {block}
+
+hover-focus()
+  &:focus,
+  &:hover
+    {block}
+
+plain-hover-focus()
+  &,
+  &:focus,
+  &:hover
+    {block}
+
+hover-focus-active()
+  &:focus,
+  &:active,
+  &:hover
+    {block}
+
+plain-hover-focus-active-visited()
+  &,
+  &:visited,
+  &:focus,
+  &:active,
+  &:hover
+    {block}
+
+hover-focus-active-visited()
+  &:visited,
+  &:focus,
+  &:active,
+  &:hover
+    {block}
+
+img-fluid()
+  max-width 100%
+  height auto
+
+// Retina image
+img-retina($file-1x, $file-2x, $width-1x, $height-1x)
+  background-image url($file-1x)
+  @media only screen and (min-resolution 192dpi), only screen and (min-resolution 2dppx)
+    background-image url($file-2x)
+    background-size $width-1x $height-1x
+
+aspect-ratio($width, $height)
+  position relative
+  &:before
+    display block
+    content " "
+    width 100%
+    padding-top ($height / $width * 100%)
+  > .content
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+
+placeholder()
+  &.placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &::-webkit-input-placeholder
+    {block}
+
+custom-scrollbar($color)
+  &::-webkit-scrollbar-track
+    background-color transparent
+  &::-webkit-scrollbar
+    width 3px
+    background-color transparent
+  &::-webkit-scrollbar-thumb
+    background-color $color
+    border-radius 20px
+
+/* Responsive */
+breakpoint-min($name, $breakpoints = $grid-breakpoints)
+  $min = $breakpoints[$name]
+  if $min != 0
+    $min
+
+breakpoint-next($name, $breakpoints = $grid-breakpoints)
+  $breakpoint-names = keys($breakpoints)
+  $n = index($breakpoint-names, $name)
+  if $n < length($breakpoint-names)
+    $breakpoint-names[$n + 1]
+
+breakpoint-max($name, $breakpoints = $grid-breakpoints)
+  $next = breakpoint-next($name, $breakpoints)
+  if $next
+    breakpoint-min($next, $breakpoints) - 1px
+
+media-breakpoint-up($name, $breakpoints = $grid-breakpoints)
+  $min = breakpoint-min($name, $breakpoints)
+  if $min
+    @media (min-width: $min)
+      {block}
+  else
+    {block}
+
+media-breakpoint-down($name, $breakpoints = $grid-breakpoints)
+  $max = breakpoint-max($name, $breakpoints)
+  if $max
+    @media (max-width: $max)
+      {block}
+  else
+    {block}
+
+media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
+  media-breakpoint-up($lower, $breakpoints)
+    media-breakpoint-down($upper, $breakpoints)
+      {block}
+
+media-breakpoint-only($name, $breakpoints = $grid-breakpoints)
+  media-breakpoint-between($name, $name, $breakpoints)
+    {block}
+
+media-print()
+  @media print
+    {block}
+
+button($background-color, $border-color)
+  background $background-color
+  border-color $border-color
+  color $border-color
+  transition all .2s ease-in
+
+  &:hover
+    background lighten($background-color, 20)
+
+  &_inverted
+    button $border-color $background-color

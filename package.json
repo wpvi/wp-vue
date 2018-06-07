@@ -1,0 +1,53 @@
+{
+  "name": "wp-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
+    "modern-normalize": "^0.4.0",
+    "register-service-worker": "^1.0.0",
+    "vue": "^2.5.16",
+    "vue-meta": "^1.5.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-plugin-pwa": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-standard": "^3.0.0-beta.15",
+    "aot-loader": "^1.0.1",
+    "lint-staged": "^6.0.0",
+    "style-resources-loader": "^1.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-style-resources-loader": "^0.1.1",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
