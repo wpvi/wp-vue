@@ -29,7 +29,7 @@ module.exports = {
       ],
       runtimeCaching: [{
         urlPattern: /api/,
-        handler: 'networkFirst'
+        handler: 'cacheFirst'
       }]
     }
   }
