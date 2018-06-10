@@ -42,6 +42,10 @@ export default {
   font-weight normal
   line-height 35px
   margin-bottom 0
+  +media-breakpoint-down(sm)
+    font-weight bold
+    font-size 30px
+    line-height 35px
 .time
   margin-top 10px
   display block

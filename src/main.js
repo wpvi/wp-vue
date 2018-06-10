@@ -5,6 +5,7 @@ import store from './store/index'
 import './registerServiceWorker'
 import './styles'
 import './plugins'
+import './services/appInstallBanner'
 
 Vue.config.productionTip = false
 
