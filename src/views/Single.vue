@@ -62,7 +62,11 @@ export default {
   margin-right auto
 .content
   margin-top 20px
+  +media-breakpoint-down(sm)
+    margin-top 0
 .back
   text-decoration none
   text-transform uppercase
+  +media-breakpoint-down(sm)
+    display none
 </style>

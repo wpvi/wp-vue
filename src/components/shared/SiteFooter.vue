@@ -1,6 +1,6 @@
 <template>
   <footer :class="$style.footer">
-    <div>
+    <div :class="$style.inner">
       <span>Love + netlify + WordPress + Vuejs</span>
       <span> | </span>
       <a href="https://app.netlify.com/start/deploy?repository=https://github.com/wpvi/wp-vue" target="_blank">Create your own, it's free</a>
@@ -24,4 +24,7 @@ export default {
   @extend $centered-flex
   flex-direction column
   font-size 13px
+.inner
+  +media-breakpoint-down(sm)
+    display none
 </style>

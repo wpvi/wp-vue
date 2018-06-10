@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <SectionIntroduction/>
-    <LoadingSpinner v-if="ui.isFirstLoading"/>
+    <LoadingSpinner
+      :class="$style.loadingSpinner"
+      v-if="ui.isFirstLoading"/>
     <template v-else>
       <PostList
         :class="$style.postList"
@@ -39,7 +41,7 @@ export default {
     SectionIntroduction
   },
   beforeRouteEnter (to, from, next) {
-    document.title = config.siteInfo.name
+    document.title = `${config.siteInfo.name} - ${config.description}`
     next()
   },
   data () {
@@ -75,6 +77,8 @@ export default {
 </script>
 
 <style lang="stylus" module>
+.loadingSpinner
+  margin-top 30px
 .loadMoreContainer
   text-align center
   margin-top 50px

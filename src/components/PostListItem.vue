@@ -58,10 +58,11 @@ $padding
   flex-direction column
   cursor pointer
   transition all 250ms cubic-bezier(.02, .01, .47, 1)
-  //max-height 473px
-  &:hover
-    box-shadow 0 40px 40px rgba(0,0,0,.16)
-    transform translate(0,-20px)
+  background #ffffff;
+  +media-breakpoint-up(sm)
+    &:hover
+      box-shadow 0 40px 40px rgba(0,0,0,.16)
+      transform translate(0,-20px)
 .thumbnail
   background-size cover
   height 200px
@@ -70,6 +71,8 @@ $padding
   flex-grow 0
   flex-shrink 0
   background-position: center center;
+  +media-breakpoint-down(sm)
+    height 150px
 .header
   @extend $padding
   margin-top 20px
@@ -92,6 +95,9 @@ $padding
     max-height 100%
     overflow hidden
     margin 0
+    +media-breakpoint-down(sm)
+      font-size 16px
+      line-height 20px
 .footer
   margin-top 20px
   @extend $padding

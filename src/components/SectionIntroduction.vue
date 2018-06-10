@@ -24,7 +24,7 @@ export default {
   margin-bottom 10px
 .content
   p
-    font-size 15px
-    line-height 23px
+    font-size 16px
+    line-height 22px
     margin 0
 </style>
