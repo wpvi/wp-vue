@@ -1,0 +1,7 @@
+[template.environment]
+  VUE_APP_BLOG_ID = "nguyenhanhhamy.wordpress.com"
+  VUE_APP_FACEBOOK_URL = "https://www.facebook.com/12bit.vn"
+  VUE_APP_TWITTER_URL = "http://twitter.com/12bit_vn"
+[build]
+  publish = "dist"
+  command = "yarn build"
