@@ -24,6 +24,9 @@ module.exports = {
   },
   pwa: {
     workboxOptions: {
+      exclude: [
+        '_redirects'
+      ],
       runtimeCaching: [{
         urlPattern: /api/,
         handler: 'networkFirst'
