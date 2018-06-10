@@ -31,6 +31,7 @@
         :href="link.url"
         :key="link.url"
         target="_blank"
+        rel="noopener"
         v-text="link.text"></a>
     </div>
   </nav>

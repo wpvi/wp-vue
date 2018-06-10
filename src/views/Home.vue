@@ -41,7 +41,7 @@ export default {
     SectionIntroduction
   },
   beforeRouteEnter (to, from, next) {
-    document.title = `${config.siteInfo.name} - ${config.description}`
+    document.title = `${config.siteInfo.name} - ${config.siteInfo.description}`
     next()
   },
   data () {
