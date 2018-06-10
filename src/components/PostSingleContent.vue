@@ -5,7 +5,7 @@
       <h1
         :class="$style.title"
         v-html="post.title"></h1>
-      <time>{{ post.date | formatDate }}</time>
+      <time :class="$style.time">{{ post.date | formatDate }}</time>
     </header>
     <div :class="$style.featuredImage">
       <img
@@ -41,8 +41,12 @@ export default {
 .title
   font-weight normal
   line-height 35px
+  margin-bottom 0
+.time
+  margin-top 10px
+  display block
 .featuredImage
-  margin-top 20px
+  margin-top 40px
 </style>
 
 <style lang="stylus" scoped>

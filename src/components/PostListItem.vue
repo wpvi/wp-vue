@@ -61,7 +61,7 @@ $padding
   flex-direction column
   cursor pointer
   transition all 250ms cubic-bezier(.02, .01, .47, 1)
-  max-height 463px
+  max-height 473px
   &:hover
     box-shadow 0 40px 40px rgba(0,0,0,.16)
     transform translate(0,-20px)
@@ -85,7 +85,7 @@ $padding
   margin-bottom 0
 .excerpt
   @extend $padding
-  margin-top 10px
+  margin-top 15px
   flex-grow 1
   overflow hidden
   p
