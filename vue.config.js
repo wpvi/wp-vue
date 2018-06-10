@@ -14,7 +14,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: `https://public-api.wordpress.com/rest/v1.1/sites/${process.env.VUE_APP_BLOG_ID}`,
+        target: `https://public-api.wordpress.com/rest/v1.1/sites`,
         changeOrigin: true,
         pathRewrite: {
           'api': '/'

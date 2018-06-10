@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../utils/config'
 const http = axios.create({
-  baseURL: `${config.apiEndpoint}`
+  baseURL: `${config.apiEndpoint}/${config.blogInfo.id}`
 })
 
 const api = {
