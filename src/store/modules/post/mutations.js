@@ -4,6 +4,9 @@ export default {
     state.currentPage = page
   },
   [mutationTypes.ADD_POSTS] (state, posts) {
-    state.posts = posts
+    state.posts = state.posts.concat(posts)
+  },
+  [mutationTypes.SET_CAN_LOAD_MORE] (state, canLoadMore) {
+    state.canLoadMore = canLoadMore
   }
 }

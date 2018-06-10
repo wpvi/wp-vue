@@ -1,12 +1,14 @@
 import axios from 'axios'
 import config from '../utils/config'
 const http = axios.create({
-  baseURL: `${config.apiEndpoint}/${config.blogInfo.id}`
+  baseURL: `${config.apiEndpoint}`
 })
 
 const api = {
-  getPosts () {
-    return http.get('/posts')
+  getPosts (params = {}) {
+    return http.get('/posts', {
+      params: params
+    })
   }
 }
 

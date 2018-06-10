@@ -1,3 +1,4 @@
 export default {
-  posts: state => state.posts
+  posts: state => state.posts,
+  canLoadMore: state => state.canLoadMore
 }

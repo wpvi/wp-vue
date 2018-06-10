@@ -4,8 +4,9 @@ import mutations from './mutations'
 export default {
   namespaced: true,
   state: {
-    postsPerPage: 10,
-    currentPage: 1,
+    canLoadMore: true,
+    postsPerPage: 9,
+    currentPage: 0,
     posts: []
   },
   mutations,
