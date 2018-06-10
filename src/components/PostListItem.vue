@@ -10,11 +10,8 @@
     :class="$style.article">
     <div
       :class="$style.thumbnail"
-      v-if="post.featured_image">
-      <img
-        :src="post.featured_image"
-        :alt="post.title">
-    </div>
+      v-if="post.featured_image"
+      :style="{'background-image': 'url(' + post.featured_image + ')'}"></div>
     <header
       :class="$style.header">
       <h1
@@ -61,7 +58,7 @@ $padding
   flex-direction column
   cursor pointer
   transition all 250ms cubic-bezier(.02, .01, .47, 1)
-  max-height 473px
+  //max-height 473px
   &:hover
     box-shadow 0 40px 40px rgba(0,0,0,.16)
     transform translate(0,-20px)
@@ -72,6 +69,7 @@ $padding
   overflow hidden
   flex-grow 0
   flex-shrink 0
+  background-position: center center;
 .header
   @extend $padding
   margin-top 20px

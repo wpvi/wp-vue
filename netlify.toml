@@ -1,7 +1,9 @@
 [template.environment]
-  VUE_APP_BLOG_ID = "nguyenhanhhamy.wordpress.com"
-  VUE_APP_FACEBOOK_URL = "https://www.facebook.com/12bit.vn"
-  VUE_APP_TWITTER_URL = "http://twitter.com/12bit_vn"
+  VUE_APP_BLOG_ID = "Your blog's domain on WordPress.com"
+  VUE_APP_FACEBOOK_URL = "Facebook URL"
+  VUE_APP_TWITTER_URL = "Twitter URL"
+  VUE_APP_INTRO_TITLE = "Intro title"
+  VUE_APP_INTRO_CONTENT = "Intro contnet, html allowed"
 [build]
   publish = "dist"
   command = "yarn build"

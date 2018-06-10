@@ -10,6 +10,10 @@ const config = {
       url: process.env.VUE_APP_TWITTER_URL
     }
   ],
+  sectionIntro: {
+    title: process.env.VUE_APP_INTRO_TITLE,
+    content: process.env.VUE_APP_INTRO_CONTENT
+  },
   siteInfo: siteInfo
 }
 export default config

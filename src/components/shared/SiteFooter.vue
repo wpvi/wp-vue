@@ -2,6 +2,8 @@
   <footer :class="$style.footer">
     <div>
       <span>Love + netlify + WordPress + Vuejs</span>
+      <span> | </span>
+      <a href="https://app.netlify.com/start/deploy?repository=https://github.com/wpvi/wp-vue" target="_blank">Create your own, it's free</a>
     </div>
   </footer>
 </template>

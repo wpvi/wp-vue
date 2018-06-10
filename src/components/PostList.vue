@@ -28,8 +28,7 @@ export default {
 <style lang="stylus" module>
 .postList
   display grid
-  grid-template-columns  1fr 1fr 1fr
-  grid-auto-columns minmax(max-content, 1fr)
-  grid-column-gap 50px
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  grid-column-gap 40px
   grid-row-gap 50px
 </style>
