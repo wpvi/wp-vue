@@ -1,11 +1,19 @@
 <template>
-  <article
+  <router-link
+    tag="article"
+    :to="{
+      name: 'single',
+      params: {
+        slug: post.slug
+      }
+    }"
     :class="$style.article">
     <div
       :class="$style.thumbnail"
-      v-if="post.featured_image"
-    >
-      <img :src="post.featured_image" alt="">
+      v-if="post.featured_image">
+      <img
+        :src="post.featured_image"
+        :alt="post.title">
     </div>
     <header
       :class="$style.header">
@@ -21,15 +29,14 @@
         <PostLikeCount
           :likeCount="post.like_count"
         />
-        <time v-text="formatDate(post.date)"></time>
+        <time>{{ post.date | formatDate }}</time>
       </div>
     </footer>
-  </article>
+  </router-link>
 </template>
 <script>
 import PostLikeCount from './../components/PostLikeCount'
 import postStuff from './../stuffs/post'
-import formatDate from '../utils/formatDate'
 export default {
   name: 'PostListItem',
   props: {
@@ -40,9 +47,6 @@ export default {
   },
   components: {
     PostLikeCount
-  },
-  methods: {
-    formatDate: formatDate
   }
 }
 </script>
@@ -57,6 +61,7 @@ $padding
   flex-direction column
   cursor pointer
   transition all 250ms cubic-bezier(.02, .01, .47, 1)
+  max-height 463px
   &:hover
     box-shadow 0 40px 40px rgba(0,0,0,.16)
     transform translate(0,-20px)
@@ -66,26 +71,34 @@ $padding
   width 100%
   overflow hidden
   flex-grow 0
+  flex-shrink 0
 .header
   @extend $padding
   margin-top 20px
   flex-grow 0
+  flex-shrink 0
 .title
   font-size 20px
   font-weight 400
-  line-height 25px
+  line-height 23px
   color #1D2129
   margin-bottom 0
 .excerpt
   @extend $padding
   margin-top 10px
   flex-grow 1
+  overflow hidden
   p
     font-size 14px
     line-height 19px
+    max-height 100%
+    overflow hidden
+    margin 0
 .footer
+  margin-top 20px
   @extend $padding
   flex-grow 0
+  flex-shrink 0
   color: var(--color--gray)
   font-size 13px
   line-height 15px

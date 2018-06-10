@@ -1,2 +1,2 @@
 /api/* https://public-api.wordpress.com/rest/v1.1/sites/:splat 200
-/blogs/*    /index.html   200
+/posts/*    /index.html   200

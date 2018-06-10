@@ -1,17 +1,23 @@
 <template>
   <header :class="$style.header">
     <div :class="$style.inner">
-      <router-link :class="$style.logo" to="/" tag="h1">Black & white</router-link>
+      <router-link :class="$style.logo" to="/" tag="h1" v-text="siteName"></router-link>
       <NavigationMain/>
     </div>
   </header>
 </template>
 <script>
 import NavigationMain from './NavigationMain'
+import config from './../../utils/config'
 export default {
   name: 'SiteHeader',
   components: {
     NavigationMain
+  },
+  computed: {
+    siteName () {
+      return config.siteInfo.name
+    }
   }
 }
 </script>

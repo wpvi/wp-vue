@@ -1,6 +1,15 @@
 const path = require('path')
 
 module.exports = {
+  chainWebpack: config => {
+    config.module
+      .rule('aot')
+      .test(/\.aot$/)
+      .set('enforce', 'post')
+      .use('aot-loader')
+      .loader('aot-loader')
+      .end()
+  },
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'stylus',

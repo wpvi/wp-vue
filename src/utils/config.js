@@ -1,10 +1,15 @@
+import siteInfo from './siteInfo.aot'
 const config = {
-  apiEndpoint: '/api',
-  blogInfo: {
-    id: process.env.VUE_APP_BLOG_ID,
-    title: process.env.VUE_APP_BLOG_TITLE,
-    description: process.env.VUE_APP_BLOG_DESCRIPTION
-  }
+  navigation: [
+    {
+      text: '#Facebook',
+      url: process.env.VUE_APP_FACEBOOK_USERNAME
+    },
+    {
+      text: '@twitter',
+      url: process.env.VUE_APP_TWITTER_USERNAME
+    }
+  ],
+  siteInfo: siteInfo
 }
-
 export default config

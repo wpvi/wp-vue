@@ -7,7 +7,7 @@ export default {
     canLoadMore: true,
     postsPerPage: 9,
     currentPage: 0,
-    posts: []
+    posts: {}
   },
   mutations,
   getters,

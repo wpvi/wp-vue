@@ -24,6 +24,7 @@
 <script>
 import PostList from './../components/PostList'
 import LoadingSpinner from './../components/shared/LoadingSpinner'
+import config from './../utils/config'
 import {
   mapActions,
   mapGetters
@@ -33,6 +34,10 @@ export default {
   components: {
     PostList,
     LoadingSpinner
+  },
+  beforeRouteEnter (to, from, next) {
+    document.title = config.siteInfo.name
+    next()
   },
   data () {
     return {

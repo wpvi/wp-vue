@@ -2,7 +2,9 @@
   <div id="app" :class="$style.app">
     <SiteHeader :class="$style.header"/>
     <main :class="$style.main">
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </main>
     <SiteFooter :class="$style.footer"/>
   </div>
@@ -31,8 +33,7 @@ export default {
     .main
       flex-grow 1
       width 100%
-      padding-top 50px
-      padding-bottom 50px
+      margin-top 50px
       @extend $container
     .header
     .footer

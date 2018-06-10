@@ -1,14 +1,23 @@
 <template>
   <nav :class="$style.nav">
     <a
-      href="#"
+      v-for="link in links"
       :class="$style.item"
-    >Item</a>
+      :href="link.url"
+      :key="link.url"
+      target="_blank"
+      v-text="link.text"></a>
   </nav>
 </template>
 <script>
+import config from './../../utils/config'
 export default {
-  name: 'NavigationMain'
+  name: 'NavigationMain',
+  computed: {
+    links () {
+      return config.navigation
+    }
+  }
 }
 </script>
 <style lang="stylus" module>

@@ -1,7 +1,6 @@
 import axios from 'axios'
-import config from '../utils/config'
 const http = axios.create({
-  baseURL: `${config.apiEndpoint}/${config.blogInfo.id}`
+  baseURL: `/api/${process.env.VUE_APP_BLOG_ID}`
 })
 
 const api = {
@@ -9,6 +8,9 @@ const api = {
     return http.get('/posts', {
       params: params
     })
+  },
+  getPostBySlug (slug) {
+    return http.get(`/posts/slug:${slug}`)
   }
 }
 

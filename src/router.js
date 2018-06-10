@@ -1,12 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Meta from 'vue-meta'
 
 import Home from './views/Home.vue'
-import About from './views/About.vue'
 
 Vue.use(Router)
-Vue.use(Meta)
 
 export default new Router({
   mode: 'history',
@@ -17,9 +14,17 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/posts/:slug?',
+      name: 'single',
+      props: true,
+      component: () => import('./views/Single.vue')
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

@@ -5,15 +5,16 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
+    "lodash": "^4.17.10",
     "modern-normalize": "^0.4.0",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.16",
-    "vue-meta": "^1.5.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "webfontloader": "^1.6.28"
